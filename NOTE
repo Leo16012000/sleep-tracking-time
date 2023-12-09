@@ -1,0 +1,30 @@
+Need update:
+  - resources/application.yaml:
+    + remove password and credential info
+db
+    + replace credential info with env that will be setted either with ide at run time or just set plain enviornment varialble before running
+  - quiz/auth/daos: should be dto
+db
+  - pom.xml:
+    + remove org.json depedency -> replace with jackson instead (better performance, industry standard)
+  - quiz/auth/entities:
+    + Remove enumerated annotation (normally it already stored enum as string, no need special annotation) (Matter of taste)
+  - Combine enums + constants package (Matter of taste)
+  - Either use 1 convention as interface with Ixxx prefix and implementation without I. Ex: ISomething -> impl: Something.
+    Or interface: Something -> impl: SomethingImpl. (Matter of taste)
+  - Update all variables so it has (somewhat) meaningful name
+  - Configs should not contains Filter (Filter is some type of components/beans not configuration) 
+  - Application should not contains no other configuration (no bean -> move that stuff to configs)
+  - Do not use QueryParamExtractor as spring already has that handled (Look up @QueryParam)
+  - Do not use Specification as spring jpa already has that handled also (Look up Spring Data JPA and how it turn method name to sql)
+  - Unless BaseRepository has some special handler that need to run all on type of operation, it should not be needed (Matter of taste)
+  - Try to keep convention handling exception in controller as either throwing exception then use ExceptionMapper to map exception to a
+    message and status code. Or using ResponseEntity and handle it at the place of exception, try not to mix 2 of them
+  - Try not to hard code expiration time for token as this can changed between environment (Long expiration time for dev environment,
+    more rational expiration time on server
+  - AuthentionManager::authenticate return an Authentication object -> need to check whether that authentication object is authenticated
+    before move on, do not need to load 2 times to get the name of the user
+  - In jwt authentication filter try to use DI to obtains an instance of the service you want to use instead of calling to get the object 
+    yourself (line 42 is an example)
+
+    
