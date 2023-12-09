@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import quiz.auth.services.IJwtService;
-import quiz.auth.services.IUserService;
+import quiz.auth.services.IAuthService;
 
 import java.io.IOException;
 
@@ -23,7 +23,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final IJwtService iJwtService;
-    private final IUserService iAccountCredentialService;
+    private final IAuthService iAccountCredentialService;
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
             @NonNull HttpServletResponse response, @NonNull FilterChain filterChain)

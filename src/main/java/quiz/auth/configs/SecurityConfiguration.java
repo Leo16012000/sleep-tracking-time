@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import quiz.auth.handler.CustomLogoutSuccessHandler;
-import quiz.auth.services.IUserService;
+import quiz.auth.services.IAuthService;
 import quiz.constants.Paths;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
@@ -25,7 +25,7 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @RequiredArgsConstructor
 public class SecurityConfiguration {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
-    private final IUserService iAccountCredentialSService;
+    private final IAuthService iAccountCredentialSService;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http

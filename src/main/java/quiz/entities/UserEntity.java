@@ -28,6 +28,8 @@ public class UserEntity implements UserDetails {
     private String firstName;
     private String lastName;
     private String email;
+    private String avatar;
+    private String phoneNumber;
     @JsonIgnore
     private String password;
     @Enumerated(EnumType.STRING)

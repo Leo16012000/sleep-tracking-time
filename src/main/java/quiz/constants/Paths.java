@@ -8,6 +8,7 @@ public class Paths {
     public static final String SIGN_OUT = "/sign-out";
     //domain
     public static final String USERS = "/users";
+    public static final String SLEEP_ENTRIES = "/sleep-entries";
     //role
     public static final String ADMIN = "/admin";
     public static final String USER = "/user";

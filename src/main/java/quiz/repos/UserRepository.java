@@ -1,11 +1,8 @@
 package quiz.repos;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import quiz.entities.UserEntity;
 
-import java.time.LocalDate;
 import java.util.Optional;
 import java.util.UUID;
 
